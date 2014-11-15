@@ -3,18 +3,80 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="stylesheets/main.css">
 	<title>mocal</title>
 </head>
 <body>
 
-<header>
-	<form action="">
-		<input type="text">
-	</form>
+<header id="header-main">
+	<h1>mocal</h1>
 </header>
+
+<section id="search-area">
+	<img src="images/doodle.svg" alt="" class="mainvis">
+	<div class="inside">
+		<form action="">
+			<input id="search-input" name="search" type="text" autocomplete="off" value="検索キーワード" spellcheck="false">
+			<input type="submit" id="search-submit">
+		</form>
+	</div>
+</section>
+
 <section>
 	
+<ul id="result">
+	<li>
+		<div class="card">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, nostrum doloribus, quidem, quae assumenda repellendus obcaecati eius eos magni consequatur harum odio at quas illo temporibus dignissimos culpa aliquid aperiam.</div>
+	</li>
+	<li>
+		<div class="card">Hic atque, perferendis libero magni eligendi incidunt. Praesentium soluta fuga, pariatur, aspernatur delectus esse dicta neque culpa modi ipsa ab nam doloribus illum suscipit facilis adipisci a eaque quidem consequatur!</div>
+	</li>
+	<li>
+		<div class="card">Vero impedit velit debitis dolore eum consectetur ipsa ipsam laudantium ipsum, voluptatem aliquid placeat, illo, officiis odio tempore reprehenderit voluptate aspernatur soluta similique illum minima veniam! Libero, quas esse fugiat.</div>
+	</li>
+	<li>
+		<div class="card">Facere, sunt fugiat ipsam nesciunt, ipsa pariatur dolorum. Facilis error itaque possimus eaque aut vero provident non dolore repudiandae a ipsam nesciunt beatae tempora nemo fugit, tenetur quas nihil deserunt.</div>
+	</li>
+	<li>
+		<div class="card">Sapiente quae voluptates iusto incidunt dolore at consequatur, quia consequuntur repellendus odio totam id mollitia esse nisi dolor itaque? Ea architecto libero consequatur nulla, repudiandae omnis ratione nemo veniam vel.</div>
+	</li>
+	<li>
+		<div class="card">Fugiat, sint laborum, earum vel eveniet illum ullam quibusdam accusantium deserunt officia ab tenetur ea maiores architecto pariatur ex atque numquam ratione amet sequi voluptate id, sit nemo sed suscipit.</div>
+	</li>
+	<li>
+		<div class="card">Inventore quos nam necessitatibus minus sunt quibusdam cum adipisci mollitia doloribus unde. Illum alias, impedit minus veniam illo soluta, adipisci eveniet velit temporibus laudantium. Esse quos cum numquam velit consectetur.</div>
+	</li>
+	<li>
+		<div class="card">Error asperiores laborum minima ipsa assumenda facere fugiat, optio doloribus rem aspernatur libero voluptates, nesciunt provident, sit blanditiis, tenetur voluptatum quo numquam? Perferendis nobis ipsa modi enim non magnam quibusdam.</div>
+	</li>
+	<li>
+		<div class="card">Sequi exercitationem nesciunt neque corporis ipsa molestiae quod quo ducimus itaque officiis reprehenderit, pariatur molestias eius! Ad quidem deleniti excepturi nostrum nam, asperiores vero totam, natus impedit, illo labore maiores!</div>
+	</li>
+	<li>
+		<div class="card">Sunt doloremque eaque ut, animi iure delectus autem, officia nostrum sint facilis incidunt pariatur, sed odio porro nesciunt, exercitationem quasi illo nemo aliquid saepe! Nobis, doloremque sapiente. Quidem, a, minus.</div>
+	</li>
+</ul>
+
+<script>
+	
+	$("#search-submit").click(function(){
+		console.log("foo")
+		
+		$(".mainvis").slideUp(function(){
+			$("#result").find(".card").each(function(i){
+				var $target = $(this)
+				
+				setTimeout(function(){
+					$target.addClass("active");
+				},i*100)
+				console.log(i);
+			});
+		})
+		return false;
+	})
+</script>
+
 </section>
 <footer>
 	
