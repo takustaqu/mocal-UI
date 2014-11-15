@@ -1,0 +1,32 @@
+{
+"positiveArticle":{
+	"title":"記事名",
+	"article":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, et cupiditate ipsum unde modi? Perspiciatis earum aperiam maiores rem modi ipsam, ratione velit odio laborum alias, beatae veritatis a accusantium."
+	},
+"negativeArticle":{
+	"title":"記事名",
+	"article":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, et cupiditate ipsum unde modi? Perspiciatis earum aperiam maiores rem modi ipsam, ratione velit odio laborum alias, beatae veritatis a accusantium."
+	},
+"positiveWord":["ワード1","ワード2","ワード3","ワード4","ワード5"],
+//ソート順は、キーワードの最もポジティブな順で
+"negativeWord":["ワード1","ワード2","ワード3","ワード4","ワード5"],
+//ソート順は、キーワードの最もネガティブな順で
+"emotionGraph":[
+	[20149999,00000,00000],
+	[20149999,00000,00000],
+	[20149999,00000,00000],
+	[20149999,00000,00000],
+	[20149999,00000,00000],
+	[20149999,00000,00000],
+	[20149999,00000,00000],
+	[20149999,00000,00000],
+	[20149999,00000,00000],
+	[20149999,00000,00000],
+	[20149999,00000,00000],
+	[20149999,00000,00000],
+	[20149999,00000,00000],
+	[20149999,00000,00000],
+	[20149999,00000,00000],
+	[20149999,00000,00000],
+	[20149999,00000,00000]]
+}

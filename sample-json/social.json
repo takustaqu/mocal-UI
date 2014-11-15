@@ -1,0 +1,14 @@
+{
+"positiveComment":{
+	"body":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate assumenda dicta placeat corrupti vero dolorum, non saepe eum tenetur facilis asperiores, enim incidunt aut autem officiis laborum fuga, maxime nihil!",
+	"score":0
+	},
+"negativeComment":{
+	"body":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate assumenda dicta placeat corrupti vero dolorum, non saepe eum tenetur facilis asperiores, enim incidunt aut autem officiis laborum fuga, maxime nihil!",
+	"score":0
+	},	
+"socialTrend":{
+	"positive":0000,
+	"negative":0000
+	}
+}
