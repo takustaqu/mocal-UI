@@ -17,70 +17,194 @@
 	<img src="images/doodle.svg" alt="" class="mainvis">
 	<div class="inside">
 		<form action="">
-			<input id="search-input" name="search" type="text" autocomplete="off" value="検索キーワード" spellcheck="false">
+			<div class="inputbox">
+				<input id="search-input" name="search" type="text" autocomplete="off" value="" spellcheck="false">
+				<div class="guide"></div>
+			</div>
+
 			<input type="submit" id="search-submit">
 		</form>
 	</div>
 </section>
 
 <section>
-	
-<ul id="result">
+<ul id="overview">
 	<li>
-		<div class="card">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, nostrum doloribus, quidem, quae assumenda repellendus obcaecati eius eos magni consequatur harum odio at quas illo temporibus dignissimos culpa aliquid aperiam.</div>
-	</li>
-	<li>
-		<div class="card">Hic atque, perferendis libero magni eligendi incidunt. Praesentium soluta fuga, pariatur, aspernatur delectus esse dicta neque culpa modi ipsa ab nam doloribus illum suscipit facilis adipisci a eaque quidem consequatur!</div>
-	</li>
-	<li>
-		<div class="card">Vero impedit velit debitis dolore eum consectetur ipsa ipsam laudantium ipsum, voluptatem aliquid placeat, illo, officiis odio tempore reprehenderit voluptate aspernatur soluta similique illum minima veniam! Libero, quas esse fugiat.</div>
-	</li>
-	<li>
-		<div class="card">Facere, sunt fugiat ipsam nesciunt, ipsa pariatur dolorum. Facilis error itaque possimus eaque aut vero provident non dolore repudiandae a ipsam nesciunt beatae tempora nemo fugit, tenetur quas nihil deserunt.</div>
-	</li>
-	<li>
-		<div class="card">Sapiente quae voluptates iusto incidunt dolore at consequatur, quia consequuntur repellendus odio totam id mollitia esse nisi dolor itaque? Ea architecto libero consequatur nulla, repudiandae omnis ratione nemo veniam vel.</div>
-	</li>
-	<li>
-		<div class="card">Fugiat, sint laborum, earum vel eveniet illum ullam quibusdam accusantium deserunt officia ab tenetur ea maiores architecto pariatur ex atque numquam ratione amet sequi voluptate id, sit nemo sed suscipit.</div>
-	</li>
-	<li>
-		<div class="card">Inventore quos nam necessitatibus minus sunt quibusdam cum adipisci mollitia doloribus unde. Illum alias, impedit minus veniam illo soluta, adipisci eveniet velit temporibus laudantium. Esse quos cum numquam velit consectetur.</div>
-	</li>
-	<li>
-		<div class="card">Error asperiores laborum minima ipsa assumenda facere fugiat, optio doloribus rem aspernatur libero voluptates, nesciunt provident, sit blanditiis, tenetur voluptatum quo numquam? Perferendis nobis ipsa modi enim non magnam quibusdam.</div>
-	</li>
-	<li>
-		<div class="card">Sequi exercitationem nesciunt neque corporis ipsa molestiae quod quo ducimus itaque officiis reprehenderit, pariatur molestias eius! Ad quidem deleniti excepturi nostrum nam, asperiores vero totam, natus impedit, illo labore maiores!</div>
-	</li>
-	<li>
-		<div class="card">Sunt doloremque eaque ut, animi iure delectus autem, officia nostrum sint facilis incidunt pariatur, sed odio porro nesciunt, exercitationem quasi illo nemo aliquid saepe! Nobis, doloremque sapiente. Quidem, a, minus.</div>
+		<div class="card overview">
+			<ul>
+				<li>会社名 / <small>証券番号</small></li>
+				<li>&yen;00,000-(0000/00/00)</li>
+				<li>
+					<div class="positive">▲</div>
+				</li>
+			</ul>
+		</div>
 	</li>
 </ul>
+<ul id="asahi">
+	<li>
+		<div class="card positive-article">
+		<h2>ポジティブな記事</h2>
+		<h3>記事名</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, et cupiditate ipsum unde modi? Perspiciatis earum aperiam maiores rem modi ipsam, ratione velit odio laborum alias, beatae veritatis a accusantium.</p>
+		</div>
 
-<script>
+		<script type="text/template" class="json">
+		"positiveArticle":{
+				"title":"記事名",
+				"article":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, et cupiditate ipsum unde modi? Perspiciatis earum aperiam maiores rem modi ipsam, ratione velit odio laborum alias, beatae veritatis a accusantium."
+			}
+		</script>
+	</li>
+
+	<li>
+		<div class="card negative-article">
+		<h2>ネガティブな記事</h2>
+		<h3>記事名</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, et cupiditate ipsum unde modi? Perspiciatis earum aperiam maiores rem modi ipsam, ratione velit odio laborum alias, beatae veritatis a accusantium.</p>
+		</div>
+
+		<script type="text/template" class="json">
+		"negativeArticle":{
+				"title":"記事名",
+				"article":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, et cupiditate ipsum unde modi? Perspiciatis earum aperiam maiores rem modi ipsam, ratione velit odio laborum alias, beatae veritatis a accusantium."
+			}
+		</script>
+	</li>
+
+	<li>
+		<div class="card positive-word">
+		<h2>ポジティブワード</h2>
+		<ul>
+			<li>ワード1</li>
+			<li>ワード2</li>
+			<li>ワード3</li>
+			<li>ワード4</li>
+			<li>ワード5</li>
+		</ul>
+		</div>
+
+		<script type="text/template" class="json">
+		"positiveWord":["ワード1","ワード2","ワード3","ワード4","ワード5"]
+		//ソート順は、キーワードの最もポジティブな順で
+		</script>
+	</li>
+
+	<li>
+		<div class="card negative-word">
+		<h2>ネガティブワード</h2>
+		<ul>
+			<li>ワード1</li>
+			<li>ワード2</li>
+			<li>ワード3</li>
+			<li>ワード4</li>
+			<li>ワード5</li>
+		</ul>
+		</div>
+
+		<script type="text/template" class="json">
+		"negativeWord":["ワード1","ワード2","ワード3","ワード4","ワード5"]
+		//ソート順は、キーワードの最もネガティブな順で
+		</script>
+	</li>
+
 	
-	$("#search-submit").click(function(){
-		console.log("foo")
-		
-		$(".mainvis").slideUp(function(){
-			$("#result").find(".card").each(function(i){
-				var $target = $(this)
-				
-				setTimeout(function(){
-					$target.addClass("active");
-				},i*100)
-				console.log(i);
-			});
-		})
-		return false;
-	})
-</script>
+
+	<li>
+		<div class="card emotion-graph">
+		<h2>感情グラフ</h2>
+		google chart api
+		and nega-posi circuler graph
+		</div>
+		<script type="text/template" class="json">
+		"emotionGraph":[
+			[yyyymm,00000,00000],
+			[yyyymm,00000,00000],
+			[yyyymm,00000,00000],
+			[yyyymm,00000,00000],
+			[yyyymm,00000,00000],
+			[yyyymm,00000,00000],
+			[yyyymm,00000,00000],
+			[yyyymm,00000,00000],
+			[yyyymm,00000,00000],
+			[yyyymm,00000,00000],
+			[yyyymm,00000,00000],
+			[yyyymm,00000,00000],
+			[yyyymm,00000,00000],
+			[yyyymm,00000,00000],
+			[yyyymm,00000,00000],
+			[yyyymm,00000,00000],
+			[yyyymm,00000,00000],]
+
+		</script>
+	</li>
+
+
+<ul id="social">
+
+
+	<li>
+		<div class="card positive-comment">
+		<h2>ポジティブなコメント</h2>
+		<script type="text/template" class="json">
+		"positiveComment":{
+			"body":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate assumenda dicta placeat corrupti vero dolorum, non saepe eum tenetur facilis asperiores, enim incidunt aut autem officiis laborum fuga, maxime nihil!",
+			"score":0
+			}
+		</script>
+		</div>
+	</li>
+
+	<li>
+		<div class="card negative-comment">
+		<h2>ネガティブなコメント</h2>
+		<script type="text/template" class="json">
+		"negativeComment":{
+			"body":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate assumenda dicta placeat corrupti vero dolorum, non saepe eum tenetur facilis asperiores, enim incidunt aut autem officiis laborum fuga, maxime nihil!",
+			"score":0
+			}
+		</script>
+		</div>
+	</li>
+
+	<li>
+		<div class="card social-trend">
+			<div></div>
+			<div></div>
+
+		</div>
+
+		<script type="text/template" class="json">
+		"socialTrend":{
+				"positive":0000,
+				"negative":0000
+			}
+		</script>
+	</li>
+
+	
+
+
+</ul>
+	
+
+
+	
+	
+
+
+
+
+
+</ul>
+
 
 </section>
 <footer>
 	
 </footer>
+
+<script src="scripts/main.js"></script>
 	
 </body>
 </html>

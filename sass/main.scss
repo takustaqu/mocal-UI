@@ -20,6 +20,11 @@ header#header-main {
 	};
 };
 
+footer {
+	background-color: #{$KEY-COLOR};
+	min-height:48px;
+}
+
 
 #search-area {
 	
@@ -34,13 +39,31 @@ header#header-main {
 		width: 310px;
 		margin: 10px auto 10px auto;
 	}
+	.inputbox {
+		border:1px solid #444;
+		background-color:#FFF;
+		background-image: url(../images/search-helptext.svg);
+		background-repeat: no-repeat;
+		position: relative;
+		display: inline-block;
+	}
+	.inputbox.active{
+		box-shadow: 0 0 2px white,0 0 8px white,0 0 8px white;
+border-color: #A6D1DD;
+	}
+	.inputbox.inputed {
+		background-image:none;
+	}
 
 	#search-input {
 		font-size: 16px;
 		color: #666;
-		padding: 8px;
+		padding: 9px;
 		height: 15px;
 		width: 236px;
+		border:0px;
+		background-color: rgba(0,0,0,0);
+		
 		}
 
 	#search-submit {
@@ -55,7 +78,7 @@ header#header-main {
 		height: 35px;
 		display: inline-block;
 		position: relative;
-		top: -2px;
+		top: -3px;
 	}
 
 	.mainvis{
@@ -76,12 +99,14 @@ header#header-main {
 		padding: 8px;
 		margin: 8px;
 		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-		transform: translate3d(400px,0,0);
+		transform: translate3d(300px,0,0);
+		opacity:0;
 	}
 
 	.card.active {
-		@include transition(transform 0.3s ease-in-out 0s);
+		@include transition(transform 0.3s ease-in-out 0s , opacity 0.3s ease-in-out 0s);
 		transform: translate3d(0,0,0);
+		opacity:1;
 	}
 }
 

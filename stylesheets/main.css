@@ -20,7 +20,13 @@ header#header-main h1 {
   background-position: center;
 }
 
-/* line 24, ../sass/main.scss */
+/* line 23, ../sass/main.scss */
+footer {
+  background-color: #F9E073;
+  min-height: 48px;
+}
+
+/* line 29, ../sass/main.scss */
 #search-area {
   background-image: url(../images/goldtexture.jpg);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.43) inset;
@@ -30,20 +36,40 @@ header#header-main h1 {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 33, ../sass/main.scss */
+/* line 38, ../sass/main.scss */
 #search-area .inside {
   width: 310px;
   margin: 10px auto 10px auto;
 }
-/* line 38, ../sass/main.scss */
+/* line 42, ../sass/main.scss */
+#search-area .inputbox {
+  border: 1px solid #444;
+  background-color: #FFF;
+  background-image: url(../images/search-helptext.svg);
+  background-repeat: no-repeat;
+  position: relative;
+  display: inline-block;
+}
+/* line 50, ../sass/main.scss */
+#search-area .inputbox.active {
+  box-shadow: 0 0 2px white,0 0 8px white,0 0 8px white;
+  border-color: #A6D1DD;
+}
+/* line 54, ../sass/main.scss */
+#search-area .inputbox.inputed {
+  background-image: none;
+}
+/* line 58, ../sass/main.scss */
 #search-area #search-input {
   font-size: 16px;
   color: #666;
-  padding: 8px;
+  padding: 9px;
   height: 15px;
   width: 236px;
+  border: 0px;
+  background-color: transparent;
 }
-/* line 46, ../sass/main.scss */
+/* line 69, ../sass/main.scss */
 #search-area #search-submit {
   background-image: url(../images/search-submit.svg);
   background-color: #F9E073;
@@ -56,37 +82,39 @@ header#header-main h1 {
   height: 35px;
   display: inline-block;
   position: relative;
-  top: -2px;
+  top: -3px;
 }
-/* line 61, ../sass/main.scss */
+/* line 84, ../sass/main.scss */
 #search-area .mainvis {
   display: block;
   margin: 0 auto;
 }
-/* line 66, ../sass/main.scss */
+/* line 89, ../sass/main.scss */
 #search-area .mainvis {
   width: 300px;
 }
 
-/* line 72, ../sass/main.scss */
+/* line 95, ../sass/main.scss */
 #result, #result li {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
-/* line 75, ../sass/main.scss */
+/* line 98, ../sass/main.scss */
 #result .card {
   padding: 8px;
   margin: 8px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-  transform: translate3d(400px, 0, 0);
+  transform: translate3d(300px, 0, 0);
+  opacity: 0;
 }
-/* line 82, ../sass/main.scss */
+/* line 106, ../sass/main.scss */
 #result .card.active {
-  -moz-transition: -moz-transform 0.3s ease-in-out 0s;
-  -o-transition: -o-transform 0.3s ease-in-out 0s;
-  -webkit-transition: -webkit-transform 0.3s ease-in-out;
-  -webkit-transition-delay: 0s;
-  transition: transform 0.3s ease-in-out 0s;
+  -moz-transition: -moz-transform 0.3s ease-in-out 0s, opacity 0.3s ease-in-out 0s;
+  -o-transition: -o-transform 0.3s ease-in-out 0s, opacity 0.3s ease-in-out 0s;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  -webkit-transition-delay: 0s, 0s;
+  transition: transform 0.3s ease-in-out 0s, opacity 0.3s ease-in-out 0s;
   transform: translate3d(0, 0, 0);
+  opacity: 1;
 }
