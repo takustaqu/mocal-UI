@@ -1,16 +1,19 @@
-$searchInput = $("#search-input");	
 
-$searchInput.on({
-	"focusin":function(){
-		$("#search-area .inputbox").addClass("inputed active");
-	},
-	"focusout":function(){
-		if($(this).val() == ""){
-			$("#search-area .inputbox").removeClass("inputed");
+//Search-form
+(function(){
+
+	$searchInput = $("#search-input");	
+	$searchInput.on({
+		"focusin":function(){
+			$("#search-area .inputbox").addClass("inputed active");
+		},
+		"focusout":function(){
+			if($(this).val() == ""){
+				$("#search-area .inputbox").removeClass("inputed");
+			}
+			$("#search-area .inputbox").removeClass("active");
 		}
-		$("#search-area .inputbox").removeClass("active");
-	}
-})
+	})
 
 	$("#search-submit").click(function(){
 		console.log("foo")
@@ -27,6 +30,8 @@ $searchInput.on({
 		})
 		return false;
 	})
+
+})()//Search-form
 
 
 
@@ -55,3 +60,44 @@ $.ajax({
     
   }
 });
+
+
+
+
+
+		$("#judgements").find(".graph").each(function(){
+			var geom = {
+				w:$(this).children("img").width(),
+				h:$(this).children("img").height()
+				}
+			$(this).children("img").css("opacity",0)
+			$(this).children("canvas").width(geom.w).width(geom.h).css({"top":0,"left":0,"position":"absolute"})
+		})
+var doughnutData = [
+　　{
+　　　value: 30,
+　　　color:"#aaf2fb"
+　　},
+　　{
+　　　value: 50,
+　　　color: "#ffb6b9"
+　　},
+　　{
+　　　value: 120,
+　　　color: "#ffe361"
+　　},
+   {
+　　　value: 170,
+　　　color: "#fbaa6e"
+　　},
+   {
+　　　value: 70,
+　　　color: "#A8BECB"
+　　}
+];
+
+
+$("canvas.chart").each(function(){
+	var myDoughnut = new Chart($(this)[0].getContext("2d")).Doughnut(doughnutData);
+
+})

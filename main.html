@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="libraries/Chart.js"></script>
 	<link rel="stylesheet" href="stylesheets/main.css">
 	<title>mocal</title>
 </head>
@@ -83,27 +84,6 @@
 			<div id="chart_div" style="width: auto; height: 300px;margin:0 -70px 0 -40px;"></div>
 		</div>
 		</div>
-		<script type="text/template" class="json">
-		"emotionGraph":[
-			[yyyymm,00000,00000],
-			[yyyymm,00000,00000],
-			[yyyymm,00000,00000],
-			[yyyymm,00000,00000],
-			[yyyymm,00000,00000],
-			[yyyymm,00000,00000],
-			[yyyymm,00000,00000],
-			[yyyymm,00000,00000],
-			[yyyymm,00000,00000],
-			[yyyymm,00000,00000],
-			[yyyymm,00000,00000],
-			[yyyymm,00000,00000],
-			[yyyymm,00000,00000],
-			[yyyymm,00000,00000],
-			[yyyymm,00000,00000],
-			[yyyymm,00000,00000],
-			[yyyymm,00000,00000],]
-
-		</script>
 	</li>
 </ul>
 
@@ -148,14 +128,40 @@
 			}
 		</script>
 	</li>
-
-	
-
-
 </ul>
 	
 
 
+</section>
+
+<section id="judgements">
+	<ul>
+		<li class="kobayashi">
+			<div class="inside">
+				<div class="puppet upper"></div>
+				<div class="puppet lower"></div>
+				<div class="graph"><img src="#" alt="">
+				<canvas class="chart" height="120" width="120"></canvas></div>
+			</div>
+		</li>
+
+		<li class="kobayashi">
+			<div class="inside">
+				<div class="puppet upper"></div>
+				<div class="puppet lower"></div>
+				<div class="graph"><img src="#" alt="">
+				<canvas class="chart" height="120" width="120"></canvas></div>
+			</div>
+		</li>
+		<li class="kobayashi">
+			<div class="inside">
+				<div class="puppet upper"></div>
+				<div class="puppet lower"></div>
+				<div class="graph"><img src="#" alt="">
+				<canvas class="chart" height="120" width="120"></canvas></div>
+			</div>
+		</li>
+	</ul>
 </section>
 <footer>
 	
@@ -245,6 +251,8 @@
       setTimeout(function(){$("#defs").next().remove()},500)
     </script>
 <script src="scripts/main.js"></script>
+
+
 	
 </body>
 </html>

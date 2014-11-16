@@ -9,6 +9,37 @@ $small:"only screen and (max-width:768px)";
 $normal:"only screen and (max-width:1200px)";
 $large:"only screen and (max-width:1400px)";
 
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+
+
+@-moz-keyframes swing {
+    0% { -moz-transform: rotate(-7deg); }
+    50% { -moz-transform: rotate(7deg); }
+    100% { -moz-transform: rotate(-7deg); }
+}
+@-webkit-keyframes swing {
+    0% { -webkit-transform: rotate(-7deg); }
+    50% { -webkit-transform: rotate(7deg); }
+    100% { -webkit-transform: rotate(-7deg); }
+}
+@keyframes swing {
+    0% {transform:rotate(-7deg);}
+    50% {transform:rotate(7deg);}
+    100% {transform:rotate(-7deg);}
+}
+
 
 body,html{
 	margin: 0;padding: 0;
@@ -33,6 +64,8 @@ footer {
 	background-color: #{$KEY-COLOR};
 	min-height:48px;
 }
+
+section {clear:both;}
 
 
 #search-area {
@@ -130,6 +163,7 @@ border-color: #A6D1DD;
     	>ul{
 			>li{
 				width:50%;
+				max-width:none;
 				// max-width:360px;
 				// margin:0 auto;
 			}
@@ -140,6 +174,7 @@ border-color: #A6D1DD;
     	>ul{
 			>li{
 				width:33.33%;
+				max-width:450px;
 			}
 		}
 	}
@@ -258,6 +293,72 @@ border-color: #A6D1DD;
 		}
 	}
 
+}
+
+#judgements {
+	text-align:center;
+  ul {
+  	& , li{
+  	margin: 0;padding: 0;	
+  	}
+    li {
+
+    	display: inline-block;
+    	
+    	div.inside{
+    		width:250px;height:300px;
+    		position: relative;
+    	}
+
+    	.graph {
+    		width:48%;
+			left: 25%;
+			bottom: 11%;
+			background-color: #{$KEY-COLOR};
+			border-radius: 300px;
+			z-index: 20;
+			position: absolute;
+			overflow: hidden;
+    	
+			-webkit-transition: border 0.2s ease-in-out , background-color 0.2s ease-in-out;
+			   -moz-transition: border 0.2s ease-in-out , background-color 0.2s ease-in-out;
+			        transition: border 0.2s ease-in-out , background-color 0.2s ease-in-out;
+
+			 -webkit-animation-name: swing;
+		    -webkit-animation-duration: 1000ms;
+		    -webkit-animation-iteration-count: infinite;
+		    -webkit-animation-timing-function: ease-in-out;
+		    -moz-animation-name: swing;
+		    -moz-animation-duration: 1000ms;
+		    -moz-animation-iteration-count: infinite;
+		    -moz-animation-timing-function: ease-in-out;
+		    animation-name: swing;
+		    animation-duration: 1000ms;
+		    animation-iteration-count: infinite;
+		    animation-timing-function: ease-in-out;
+		    >img {width:100%;display: block;}
+    	}
+    	.upper , .lower{
+    	position: absolute;left:0;top:0;
+      	width: 100%;height: 100%;
+      	-webkit-background-size: 100% auto;
+      	     -o-background-size: 100% auto;
+      	        background-size: 100% auto;
+      }
+
+      .upper {
+      	background-position:top;
+      	z-index:30;
+      }
+      .lower {
+      	background-position:bottom;
+      	z-index:10;
+      }
+    }
+  }
+  .kobayashi .puppet{
+  	background-image: url(../images/judgement/kobayashi.png);
+  }
 }
 
 
