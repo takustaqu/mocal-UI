@@ -90,19 +90,60 @@ section {
 }
 
 /* line 71, ../sass/main.scss */
+.ui-autocomplete {
+  background-color: #FFF;
+  position: relative;
+  top: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.34);
+  width: 310px;
+  display: block;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  border-radius: 4px;
+  font-size: 14px;
+}
+/* line 79, ../sass/main.scss */
+.ui-autocomplete, .ui-autocomplete li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+/* line 83, ../sass/main.scss */
+.ui-autocomplete > li {
+  padding: 2px 6px;
+  display: block;
+  border-bottom: 1px solid #ccc;
+}
+/* line 89, ../sass/main.scss */
+.ui-autocomplete > li:hover {
+  background-color: #EAF9FC;
+}
+/* line 92, ../sass/main.scss */
+.ui-autocomplete > li:last-child {
+  border: none;
+}
+/* line 96, ../sass/main.scss */
+.ui-autocomplete > li.ui-state-focus {
+  background-color: #00C6E0;
+  color: #FFF;
+}
+
+/* line 102, ../sass/main.scss */
 #search-area {
   background-image: url(../images/goldtexture.jpg);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.43) inset;
   -webkit-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  overflow: hidden;
+  *zoom: 1;
 }
-/* line 80, ../sass/main.scss */
+/* line 111, ../sass/main.scss */
 #search-area .inside {
   width: 310px;
   margin: 10px auto 10px auto;
 }
-/* line 84, ../sass/main.scss */
+/* line 117, ../sass/main.scss */
 #search-area .inputbox {
   border: 1px solid #444;
   background-color: #FFF;
@@ -111,16 +152,16 @@ section {
   position: relative;
   display: inline-block;
 }
-/* line 92, ../sass/main.scss */
+/* line 125, ../sass/main.scss */
 #search-area .inputbox.active {
   box-shadow: 0 0 2px white,0 0 8px white,0 0 8px white;
   border-color: #A6D1DD;
 }
-/* line 96, ../sass/main.scss */
+/* line 129, ../sass/main.scss */
 #search-area .inputbox.inputed {
   background-image: none;
 }
-/* line 100, ../sass/main.scss */
+/* line 133, ../sass/main.scss */
 #search-area #search-input {
   font-size: 16px;
   color: #666;
@@ -130,7 +171,7 @@ section {
   border: 0px;
   background-color: transparent;
 }
-/* line 111, ../sass/main.scss */
+/* line 144, ../sass/main.scss */
 #search-area #search-submit {
   background-image: url(../images/search-submit.svg);
   background-color: #F9E073;
@@ -145,35 +186,35 @@ section {
   position: relative;
   top: -3px;
 }
-/* line 126, ../sass/main.scss */
+/* line 159, ../sass/main.scss */
 #search-area .mainvis {
   display: block;
   margin: 0 auto;
 }
-/* line 131, ../sass/main.scss */
+/* line 164, ../sass/main.scss */
 #search-area .mainvis {
   width: 300px;
 }
 
-/* line 137, ../sass/main.scss */
+/* line 170, ../sass/main.scss */
 #result ul, #result li {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
-/* line 141, ../sass/main.scss */
+/* line 174, ../sass/main.scss */
 #result > ul > li {
   min-width: 280px;
   float: left;
 }
-/* line 143, ../sass/main.scss */
+/* line 176, ../sass/main.scss */
 #result > ul > li :after {
   content: "";
   clear: both;
   display: block;
 }
 @media only screen and (max-width: 567px) {
-  /* line 153, ../sass/main.scss */
+  /* line 186, ../sass/main.scss */
   #result > ul > li {
     float: none;
     width: 100%;
@@ -182,26 +223,38 @@ section {
   }
 }
 @media only screen and (max-width: 768px) {
-  /* line 164, ../sass/main.scss */
+  /* line 197, ../sass/main.scss */
   #result > ul > li {
     width: 50%;
     max-width: none;
   }
+  /* line 205, ../sass/main.scss */
+  #result > ul#overview > li {
+    width: 100%;
+  }
 }
 @media only screen and (max-width: 1200px) {
-  /* line 175, ../sass/main.scss */
+  /* line 211, ../sass/main.scss */
   #result > ul > li {
     width: 33.33%;
     max-width: 450px;
   }
+  /* line 217, ../sass/main.scss */
+  #result > ul#overview > li {
+    width: 66.66%;
+  }
 }
 @media only screen and (max-width: 1400px) {
-  /* line 184, ../sass/main.scss */
+  /* line 223, ../sass/main.scss */
   #result > ul > li {
     width: 25%;
   }
+  /* line 230, ../sass/main.scss */
+  #result > ul#overview > li {
+    width: 50%;
+  }
 }
-/* line 192, ../sass/main.scss */
+/* line 234, ../sass/main.scss */
 #result .card {
   padding: 8px;
   margin: 8px;
@@ -211,7 +264,7 @@ section {
   opacity: 0;
   background-color: #FFF;
 }
-/* line 201, ../sass/main.scss */
+/* line 243, ../sass/main.scss */
 #result .card h2 {
   font-size: 18px;
   margin: -8px -8px 0 -8px;
@@ -221,7 +274,7 @@ section {
   padding: 9px 15px;
   color: #999;
 }
-/* line 212, ../sass/main.scss */
+/* line 254, ../sass/main.scss */
 #result .card.active {
   -moz-transition: -moz-transform 0.3s ease-in-out 0s, opacity 0.3s ease-in-out 0s;
   -o-transition: -o-transform 0.3s ease-in-out 0s, opacity 0.3s ease-in-out 0s;
@@ -231,14 +284,14 @@ section {
   transform: translate3d(0, 0, 0);
   opacity: 1;
 }
-/* line 220, ../sass/main.scss */
+/* line 262, ../sass/main.scss */
 #result .overview .name {
   font-size: 28px;
   line-height: 1em;
   border-bottom: 1px solid #ccc;
   padding: 0 0 6px 0;
 }
-/* line 227, ../sass/main.scss */
+/* line 269, ../sass/main.scss */
 #result .overview .badge,
 #result .overview .timestamp {
   display: inline-block;
@@ -251,21 +304,21 @@ section {
   position: relative;
   top: -2px;
 }
-/* line 240, ../sass/main.scss */
+/* line 282, ../sass/main.scss */
 #result .overview .stockPrice {
   font-size: 22px;
   padding: 6px 0 0 3px;
   font-family: Helvetica,Arial;
 }
-/* line 246, ../sass/main.scss */
+/* line 288, ../sass/main.scss */
 #result .overview .negative .stockPrice {
   color: #B00;
 }
-/* line 247, ../sass/main.scss */
+/* line 289, ../sass/main.scss */
 #result .overview .positive .stockPrice {
   color: #00A622;
 }
-/* line 250, ../sass/main.scss */
+/* line 292, ../sass/main.scss */
 #result .overview .vector div {
   width: 24px;
   height: 24px;
@@ -282,26 +335,26 @@ section {
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.43), 0 -2px 3px rgba(0, 0, 0, 0.1) inset;
   font-size: 13px;
 }
-/* line 268, ../sass/main.scss */
+/* line 310, ../sass/main.scss */
 #result .overview .positive .vector div {
   background-color: #00A622;
 }
-/* line 269, ../sass/main.scss */
+/* line 311, ../sass/main.scss */
 #result .overview .negative .vector div {
   background-color: #B00;
 }
-/* line 275, ../sass/main.scss */
+/* line 317, ../sass/main.scss */
 #result .positive-article p,
 #result .negative-article p {
   font-family: serif;
 }
-/* line 282, ../sass/main.scss */
+/* line 324, ../sass/main.scss */
 #result .positive-word ol,
 #result .negative-word ol {
   list-style-type: decimal;
   padding-left: 24px;
 }
-/* line 283, ../sass/main.scss */
+/* line 325, ../sass/main.scss */
 #result .positive-word li,
 #result .negative-word li {
   list-style-type: decimal;
@@ -311,32 +364,32 @@ section {
   margin: 3px -3px 3px 3px;
   border-bottom: 1px dotted #ccc;
 }
-/* line 291, ../sass/main.scss */
+/* line 333, ../sass/main.scss */
 #result .positive-word li:last-child,
 #result .negative-word li:last-child {
   border-bottom: none;
 }
 
-/* line 298, ../sass/main.scss */
+/* line 340, ../sass/main.scss */
 #judgements {
   text-align: center;
 }
-/* line 301, ../sass/main.scss */
+/* line 343, ../sass/main.scss */
 #judgements ul, #judgements ul li {
   margin: 0;
   padding: 0;
 }
-/* line 304, ../sass/main.scss */
+/* line 346, ../sass/main.scss */
 #judgements ul li {
   display: inline-block;
 }
-/* line 308, ../sass/main.scss */
+/* line 350, ../sass/main.scss */
 #judgements ul li div.inside {
   width: 250px;
   height: 300px;
   position: relative;
 }
-/* line 313, ../sass/main.scss */
+/* line 355, ../sass/main.scss */
 #judgements ul li .graph {
   width: 48%;
   left: 25%;
@@ -362,12 +415,12 @@ section {
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
 }
-/* line 339, ../sass/main.scss */
+/* line 381, ../sass/main.scss */
 #judgements ul li .graph > img {
   width: 100%;
   display: block;
 }
-/* line 341, ../sass/main.scss */
+/* line 383, ../sass/main.scss */
 #judgements ul li .upper, #judgements ul li .lower {
   position: absolute;
   left: 0;
@@ -378,17 +431,17 @@ section {
   -o-background-size: 100% auto;
   background-size: 100% auto;
 }
-/* line 349, ../sass/main.scss */
+/* line 391, ../sass/main.scss */
 #judgements ul li .upper {
   background-position: top;
   z-index: 30;
 }
-/* line 353, ../sass/main.scss */
+/* line 395, ../sass/main.scss */
 #judgements ul li .lower {
   background-position: bottom;
   z-index: 10;
 }
-/* line 359, ../sass/main.scss */
+/* line 401, ../sass/main.scss */
 #judgements .kobayashi .puppet {
   background-image: url(../images/judgement/kobayashi.png);
 }
