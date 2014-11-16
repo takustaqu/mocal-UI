@@ -46,17 +46,62 @@ var render = {
 	}
 
 
+
+var query = encodeURI("ぐるなび");
+
+
+// $.ajax({
+//   type: "GET",
+//   url: "http://mocal.cloudapp.net/api/asahi?q="+query,
+//   dataType: 'jsonp',
+//   success: function(json){
+//   	var $asahi = $("#asahi")
+//   	$asahi.find(".positive-article").append(render.asahiArticle(json.positiveArticle))
+//   	$asahi.find(".negative-article").append(render.asahiArticle(json.negativeArticle))
+//   	$asahi.find(".positive-word").append(render.asahiWords(json.positiveWord))
+//   	$asahi.find(".negative-word").append(render.asahiWords(json.negativeWord))
+    
+//   }
+// });
+
 $.ajax({
   type: "GET",
-  url: "http://mocal.cloudapp.net/api/asahi?q=%E3%83%AF%E3%82%A4%E3%83%BB%E3%83%86%E3%82%A3%E3%83%BC%E3%83%BB%E3%82%A8%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%BC%E3%83%9D%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%BB%E3%83%90%E3%83%BC%E3%83%8F%E3%83%83%E3%83%89&callback=foo",
-  dataType: "JSON",
+  url: "http://mocal.cloudapp.net/api/companyDetail?q="+query,
+  dataType: 'json',
   success: function(json){
-  	var $asahi = $("#asahi");
+  	var $overview = $("#overview");
 
-  	$asahi.find(".positive-article").append(render.asahiArticle(json.positiveArticle))
-  	$asahi.find(".negative-article").append(render.asahiArticle(json.negativeArticle))
-  	$asahi.find(".positive-word").append(render.asahiWords(json.positiveWord))
-  	$asahi.find(".negative-word").append(render.asahiWords(json.negativeWord))
+  	console.log(json);
+  	//{name: "ぐるなび", stock_code: 2440, price: 1689} 
+
+
+<ul class="negative">
+				<li class="name">セイコーエプソン <small class="badge">証券番号:0000</small></li>
+				<li class="stockPrice">&yen;00,000 <small class="timestamp">0000/00/00 00:00現在</small></li>
+				<li class="vector">
+					<div class="">▼</div>
+				</li>
+			</ul>
+
+  	$overview.find(".name").append(render.asahiArticle(json.positiveArticle))
+  	$overview.find(".negative-article").append(render.asahiArticle(json.negativeArticle))
+  	$overview.find(".positive-word").append(render.asahiWords(json.positiveWord))
+  	$overview.find(".negative-word").append(render.asahiWords(json.negativeWord))
+    
+  }
+});
+
+$.ajax({
+  type: "GET",
+  url: "http://mocal.cloudapp.net/api/social?q="+query,
+  dataType: 'json',
+  success: function(json){
+  	//{positiveComment: null, negativeComment: null, socialTrend: Object}
+  	console.log(json)
+  	// $asahi.find(".positive-article").append(render.asahiArticle(json.positiveArticle))
+  	// $asahi.find(".negative-article").append(render.asahiArticle(json.negativeArticle))
+  	// $asahi.find(".positive-word").append(render.asahiWords(json.positiveWord))
+  	// $asahi.find(".negative-word").append(render.asahiWords(json.negativeWord))
     
   }
 });
