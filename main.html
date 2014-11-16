@@ -40,6 +40,14 @@
 	</li>
 </ul>
 
+<ul id="seimei">
+	<li>
+		<div class="card overview">
+		<h2>社名判断</h2>
+
+		</div>
+	</li>
+</ul>
 
 <ul id="asahi">
 	<li>
@@ -76,10 +84,12 @@
 
 	<li>
 		<div class="card emotion-graph">
-		<h2>感情グラフ</h2>
-		<div style="overflow:hidden;">
-			<div id="chart_div" style="width: auto; height: 300px;margin:0 -70px 0 -40px;"></div>
-		</div>
+		 		<h2>感情グラフ</h2>
+<div style="overflow:hidden;">
+	<div id="chart_div" style="width: auto; height: 300px;margin:0 -70px 0 -40px;"></div>
+	</div>
+
+
 		</div>
 	</li>
 </ul>
@@ -87,7 +97,7 @@
 <ul id="social">
 
 
-	<li>
+	<!-- <li>
 		<div class="card positive-comment">
 		<h2>ポジティブなコメント</h2>
 		<script type="text/template" class="json">
@@ -124,16 +134,16 @@
 				"negative":0000
 			}
 		</script>
-	</li>
+	</li> -->
 </ul>
 	
 
 
 </section>
 
-<section id="judgements">
+<section id="judgements" style="display:none;">
 	<ul id="puppets">
-		<li class="kobayashi">
+	<li class="kobayashi">
 			<div class="inside">
 				<div class="puppet upper"></div>
 				<div class="puppet lower"></div>
@@ -141,7 +151,7 @@
 				<canvas class="chart" height="120" width="120"></canvas></div>
 			</div>
 			<div class="baloon">
-				買い!
+				う〜ん
 			</div>
 			<div class="resultCard">
 				結果表示
@@ -156,12 +166,14 @@
 				<canvas class="chart" height="120" width="120"></canvas></div>
 			</div>
 			<div class="baloon">
-				買い!
+				いけてる！
 			</div>
 			<div class="resultCard">
 				結果表示
 			</div>
 		</li>
+
+		
 		<li class="kobayashi">
 			<div class="inside">
 				<div class="puppet upper"></div>
@@ -170,7 +182,7 @@
 				<canvas class="chart" height="120" width="120"></canvas></div>
 			</div>
 			<div class="baloon">
-				買い!
+				分からん。
 			</div>
 			<div class="resultCard">
 				結果表示
@@ -184,86 +196,27 @@
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript">
       google.load("visualization", "1", {packages:["corechart"]});
-      google.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Year', 'ポジティブ', 'ネガティブ'],
-          ['2004',  1000,      400],
-          ['2005',  1170,      460],
-          ['2006',  660,       1120],
-          ['2007',  1030,      540],
-          ['2004',  1000,      400],
-          ['2005',  1170,      460],
-          ['2006',  660,       1120],
-          ['2007',  1030,      540],
-          ['2004',  1000,      400],
-          ['2005',  1170,      460],
-          ['2006',  660,       1120],
-          ['2007',  1030,      540],
-          ['2004',  1000,      400],
-          ['2005',  1170,      460],
-          ['2006',  660,       1120],
-          ['2007',  1030,      540],
-          ['2004',  1000,      400],
-          ['2005',  1170,      460],
-          ['2006',  660,       1120],
-          ['2007',  1030,      540],
-          ['2004',  1000,      400],
-          ['2005',  1170,      460],
-          ['2006',  660,       1120],
-          ['2007',  1030,      540],
-          ['2004',  1000,      400],
-          ['2005',  1170,      460],
-          ['2006',  660,       1120],
-          ['2007',  1030,      540],
-          ['2004',  1000,      400],
-          ['2005',  1170,      460],
-          ['2006',  660,       1120],
-          ['2007',  1030,      540],
-          ['2004',  1000,      400],
-          ['2005',  1170,      460],
-          ['2006',  660,       1120],
-          ['2007',  1030,      540],
-          ['2004',  1000,      400],
-          ['2005',  1170,      460],
-          ['2006',  660,       1120],
-          ['2007',  1030,      540],
-          ['2004',  1000,      400],
-          ['2005',  1170,      460],
-          ['2006',  660,       1120],
-          ['2007',  1030,      540],
-          ['2004',  1000,      400],
-          ['2005',  1170,      460],
-          ['2006',  660,       1120],
-          ['2007',  1030,      540],
-          ['2004',  1000,      400],
-          ['2005',  1170,      460],
-          ['2006',  660,       1120],
-          ['2007',  1030,      540],
-          ['2004',  1000,      400],
-          ['2005',  1170,      460],
-          ['2006',  660,       1120],
-          ['2007',  1030,      540],
-          ['2004',  1000,      400],
-          ['2005',  1170,      460],
-          ['2006',  660,       1120],
-          ['2007',  1030,      540],
-          ['2004',  1000,      400],
-          
+
+			  	 var tmp = [['Year', 'ポジティブ', 'ネガティブ'],["20131004",2,0],["20131011",0,0],["20131013",4,0],["20131027",16,-15],["20131110",2,-4],["20131127",2,0],["20131215",4,-4],["20131219",8,0],["20131220",0,-2],["20131225",4,-6],["20131231",7,0],["20140108",2,0],["20140213",0,0],["20140412",0,-2],["20140501",4,-2],["20140504",2,0],["20140516",0,0],["20140517",5,-6],["20140522",0,0],["20140613",0,0]]
+
+			  	
+		      function drawChart() {
+		        var data = google.visualization.arrayToDataTable(tmp);
+
+		        var options = {
+		          curveType: 'function',
+		          legend:{"position":"bottom"},
+		          vAxis:{format:''}
+		        };
+
+		        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+
+		        chart.draw(data, options);
+		      }
+
+			    google.setOnLoadCallback(drawChart);
+      			setTimeout(function(){$("#defs").next().remove()},500)
      
-        ]);
-
-        var options = {
-          curveType: 'function',
-          legend:{"position":"bottom"},
-          vAxis:{format:''}
-        };
-
-        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-
-        chart.draw(data, options);
-      }
-      setTimeout(function(){$("#defs").next().remove()},500)
     </script>
 <script src="scripts/main.js"></script>
 

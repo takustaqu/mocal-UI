@@ -47,6 +47,7 @@ body,html{
 };
 
 
+
 header#header-main {
 	background-color: #{$KEY-COLOR};
 	h1 {
@@ -202,7 +203,10 @@ section {clear:both;}
 		}
 		>ul#overview{
 			>li{width:100%}
-			.name{font-size:60px;}
+			.name{font-size:30px;}
+		}
+		>ul#asahi{
+			>li:last-child{width:100%}
 		}
 	}
 
@@ -215,7 +219,10 @@ section {clear:both;}
 		}
 		>ul#overview{
 			>li{width:66.66%}
-			.name{font-size:40px;}
+			.name{font-size:35px;}
+		}
+		>ul#asahi{
+			>li:last-child{width:66.66%}
 		}
 	}
 
@@ -229,7 +236,11 @@ section {clear:both;}
 		}
 		>ul#overview{
 			>li{width:50%}
-			.name{font-size:60px;}
+			.name{font-size:30px;}
+		}
+
+		>ul#asahi{
+			>li:last-child{width:50%}
 		}
 	}
 
@@ -328,7 +339,7 @@ section {clear:both;}
 			list-style-type: decimal;
 			padding: 11px 0px;
 			line-height: 1em;
-			font-size: 14px;
+			font-size: 18px;
 			margin: 3px -3px 3px 3px;
 			border-bottom: 1px dotted #ccc;
 			}
@@ -341,6 +352,7 @@ section {clear:both;}
 
 #judgements {
 	text-align:center;
+	@include clearfix();
   ul {
   	& , li{
   	margin: 0;padding: 0;	
@@ -421,6 +433,7 @@ section {clear:both;}
 		position: relative;
 		z-index: 15;
 		color:#FFF;
+		display: none;
       }
 
 
@@ -433,7 +446,7 @@ section {clear:both;}
 		top: 70px;
 		right: 0px;
 		line-height: 100px;
-		font-size: 24px;
+		font-size: 15px;
 		text-align: center;
 		letter-spacing: -1px;
       }
@@ -452,4 +465,6 @@ section {clear:both;}
 }
 
 
+
+p {max-height:150px;overflow:hidden;display: block;}
 
