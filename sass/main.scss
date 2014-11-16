@@ -68,6 +68,24 @@ footer {
 section {clear:both;}
 
 
+.ui-autocomplete {
+		& , li {margin: 0;padding: 0;list-style-type: none;}
+		width:310px;
+		display:block;border:1px solid #333;overflow:hidden;border-radius:8px;
+		font-size:14px;
+		>li {
+			padding:2px 0;
+			display: block;
+			border-bottom:1px solid #ccc;
+		}
+		>li:hover{
+			background-color:red;
+		}
+		>li:last-child {
+			border:none;
+		}
+	}
+
 #search-area {
 	
 	background-image: url(../images/goldtexture.jpg);
@@ -75,12 +93,14 @@ section {clear:both;}
 	-webkit-background-size: cover;
 	     -o-background-size: cover;
 	        background-size: cover;
-	// @include clearfix();
+	@include clearfix();
 
 	.inside {
 		width: 310px;
 		margin: 10px auto 10px auto;
 	}
+	
+
 	.inputbox {
 		border:1px solid #444;
 		background-color:#FFF;
@@ -91,7 +111,7 @@ section {clear:both;}
 	}
 	.inputbox.active{
 		box-shadow: 0 0 2px white,0 0 8px white,0 0 8px white;
-border-color: #A6D1DD;
+		border-color: #A6D1DD;
 	}
 	.inputbox.inputed {
 		background-image:none;
@@ -360,8 +380,6 @@ border-color: #A6D1DD;
   	background-image: url(../images/judgement/kobayashi.png);
   }
 }
-
-
 
 
 
