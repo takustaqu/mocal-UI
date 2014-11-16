@@ -34,14 +34,23 @@ $(function(){
 					console.log(i);
 				});
 
-				query = encodeURI($("#search-input").val());
-			})
+				
 
+
+			});
+
+
+			query = $("#search-input").val();
+			if(query.match(/\ \([0-9]*[\ ,]( )?[0-9]*\)/i)){
+				$(this).attr("data-currentquery",query.split(" ")[0])
+			}else{
+				$(this).attr("data-currentquery",query)
+			}
 
 
 			$.ajax({
 			  type: "GET",
-			  url: "http://mocal.cloudapp.net/api/asahi?q="+encodeURI($("#search-input").val()),
+			  url: "http://mocal.cloudapp.net/api/asahi?q="+encodeURI($("#search-form").attr("data-currentquery")),
 			  dataType: 'json',
 			  success: function(json){
 			  	console.log(json)
@@ -56,12 +65,11 @@ $(function(){
 
 			$.ajax({
 			  type: "GET",
-			  url: "http://mocal.cloudapp.net/api/companyDetail?q="+encodeURI($("#search-input").val()),
+			  url: "http://mocal.cloudapp.net/api/companyDetail?q="+encodeURI($("#search-form").attr("data-currentquery")),
 			  dataType: 'json',
 			  success: function(json){
 			  	var $result = $("#result")
 				var $ul = $("<ul />").addClass()
-				$("#result").append("foo");
 				console.log($("#result").find(".name"))
 				$ul.append('<li class="name">'+ json.name +' <small class="badge">証券番号:'+ json.stock_code +'</small></li>');
 				$ul.append('<li class="stockPrice">&yen;'+_c.devideComma(json.price)+' <small class="timestamp">0000/00/00 00:00現在</small></li>');
@@ -72,7 +80,7 @@ $(function(){
 
 			$.ajax({
 			  type: "GET",
-			  url: "http://mocal.cloudapp.net/api/social?q="+encodeURI($("#search-input").val()),
+			  url: "http://mocal.cloudapp.net/api/social?q="+encodeURI($("#search-form").attr("data-currentquery")),
 			  dataType: 'json',
 			  success: function(json){
 			  	//{positiveComment: null, negativeComment: null, socialTrend: Object}
