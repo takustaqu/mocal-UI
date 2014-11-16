@@ -27,61 +27,34 @@
 	</div>
 </section>
 
-<section>
+<section id="result">
 <ul id="overview">
 	<li>
 		<div class="card overview">
-			<ul>
-				<li>会社名 / <small>証券番号</small></li>
-				<li>&yen;00,000-(0000/00/00)</li>
-				<li>
-					<div class="positive">▲</div>
+			<ul class="negative">
+				<li class="name">セイコーエプソン <small class="badge">証券番号:0000</small></li>
+				<li class="stockPrice">&yen;00,000 <small class="timestamp">0000/00/00 00:00現在</small></li>
+				<li class="vector">
+					<div class="">▼</div>
 				</li>
 			</ul>
 		</div>
 	</li>
 </ul>
+
+
 <ul id="asahi">
 	<li>
-		<div class="card positive-article">
-		<h2>ポジティブな記事</h2>
-		<h3>記事名</h3>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, et cupiditate ipsum unde modi? Perspiciatis earum aperiam maiores rem modi ipsam, ratione velit odio laborum alias, beatae veritatis a accusantium.</p>
-		</div>
-
-		<script type="text/template" class="json">
-		"positiveArticle":{
-				"title":"記事名",
-				"article":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, et cupiditate ipsum unde modi? Perspiciatis earum aperiam maiores rem modi ipsam, ratione velit odio laborum alias, beatae veritatis a accusantium."
-			}
-		</script>
+		<div class="card positive-article"><h2>ポジティブな記事</h2></div>
 	</li>
 
 	<li>
-		<div class="card negative-article">
-		<h2>ネガティブな記事</h2>
-		<h3>記事名</h3>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, et cupiditate ipsum unde modi? Perspiciatis earum aperiam maiores rem modi ipsam, ratione velit odio laborum alias, beatae veritatis a accusantium.</p>
-		</div>
-
-		<script type="text/template" class="json">
-		"negativeArticle":{
-				"title":"記事名",
-				"article":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, et cupiditate ipsum unde modi? Perspiciatis earum aperiam maiores rem modi ipsam, ratione velit odio laborum alias, beatae veritatis a accusantium."
-			}
-		</script>
+		<div class="card negative-article"><h2>ネガティブな記事</h2></div>
 	</li>
 
 	<li>
 		<div class="card positive-word">
 		<h2>ポジティブワード</h2>
-		<ul>
-			<li>ワード1</li>
-			<li>ワード2</li>
-			<li>ワード3</li>
-			<li>ワード4</li>
-			<li>ワード5</li>
-		</ul>
 		</div>
 
 		<script type="text/template" class="json">
@@ -93,13 +66,6 @@
 	<li>
 		<div class="card negative-word">
 		<h2>ネガティブワード</h2>
-		<ul>
-			<li>ワード1</li>
-			<li>ワード2</li>
-			<li>ワード3</li>
-			<li>ワード4</li>
-			<li>ワード5</li>
-		</ul>
 		</div>
 
 		<script type="text/template" class="json">
@@ -113,8 +79,9 @@
 	<li>
 		<div class="card emotion-graph">
 		<h2>感情グラフ</h2>
-		google chart api
-		and nega-posi circuler graph
+		<div style="overflow:hidden;">
+			<div id="chart_div" style="width: auto; height: 300px;margin:0 -70px 0 -40px;"></div>
+		</div>
 		</div>
 		<script type="text/template" class="json">
 		"emotionGraph":[
@@ -138,7 +105,7 @@
 
 		</script>
 	</li>
-
+</ul>
 
 <ul id="social">
 
@@ -189,21 +156,94 @@
 	
 
 
-	
-	
-
-
-
-
-
-</ul>
-
-
 </section>
 <footer>
 	
 </footer>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'ポジティブ', 'ネガティブ'],
+          ['2004',  1000,      400],
+          ['2005',  1170,      460],
+          ['2006',  660,       1120],
+          ['2007',  1030,      540],
+          ['2004',  1000,      400],
+          ['2005',  1170,      460],
+          ['2006',  660,       1120],
+          ['2007',  1030,      540],
+          ['2004',  1000,      400],
+          ['2005',  1170,      460],
+          ['2006',  660,       1120],
+          ['2007',  1030,      540],
+          ['2004',  1000,      400],
+          ['2005',  1170,      460],
+          ['2006',  660,       1120],
+          ['2007',  1030,      540],
+          ['2004',  1000,      400],
+          ['2005',  1170,      460],
+          ['2006',  660,       1120],
+          ['2007',  1030,      540],
+          ['2004',  1000,      400],
+          ['2005',  1170,      460],
+          ['2006',  660,       1120],
+          ['2007',  1030,      540],
+          ['2004',  1000,      400],
+          ['2005',  1170,      460],
+          ['2006',  660,       1120],
+          ['2007',  1030,      540],
+          ['2004',  1000,      400],
+          ['2005',  1170,      460],
+          ['2006',  660,       1120],
+          ['2007',  1030,      540],
+          ['2004',  1000,      400],
+          ['2005',  1170,      460],
+          ['2006',  660,       1120],
+          ['2007',  1030,      540],
+          ['2004',  1000,      400],
+          ['2005',  1170,      460],
+          ['2006',  660,       1120],
+          ['2007',  1030,      540],
+          ['2004',  1000,      400],
+          ['2005',  1170,      460],
+          ['2006',  660,       1120],
+          ['2007',  1030,      540],
+          ['2004',  1000,      400],
+          ['2005',  1170,      460],
+          ['2006',  660,       1120],
+          ['2007',  1030,      540],
+          ['2004',  1000,      400],
+          ['2005',  1170,      460],
+          ['2006',  660,       1120],
+          ['2007',  1030,      540],
+          ['2004',  1000,      400],
+          ['2005',  1170,      460],
+          ['2006',  660,       1120],
+          ['2007',  1030,      540],
+          ['2004',  1000,      400],
+          ['2005',  1170,      460],
+          ['2006',  660,       1120],
+          ['2007',  1030,      540],
+          ['2004',  1000,      400],
+          
+     
+        ]);
 
+        var options = {
+          curveType: 'function',
+          legend:{"position":"bottom"},
+          vAxis:{format:''}
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+      }
+      setTimeout(function(){$("#defs").next().remove()},500)
+    </script>
 <script src="scripts/main.js"></script>
 	
 </body>

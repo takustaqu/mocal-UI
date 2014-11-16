@@ -1,9 +1,18 @@
 @import "compass";
 
 $KEY-COLOR : #F9E073;
+$RED : #B00 ;
+$GREEN :#00A622 ;
+
+$xsmall:"only screen and (max-width:567px)";
+$small:"only screen and (max-width:768px)";
+$normal:"only screen and (max-width:1200px)";
+$large:"only screen and (max-width:1400px)";
+
 
 body,html{
 	margin: 0;padding: 0;
+	font-family:sans-serif;
 };
 
 
@@ -33,7 +42,7 @@ footer {
 	-webkit-background-size: cover;
 	     -o-background-size: cover;
 	        background-size: cover;
-	@include clearfix();
+	// @include clearfix();
 
 	.inside {
 		width: 310px;
@@ -92,15 +101,77 @@ border-color: #A6D1DD;
 }
 
 #result {
-	& , li {
+	ul , li {
 		margin: 0;padding: 0;list-style-type: none;
 	}
+	>ul{
+		>li{min-width:280px;
+			float:left;
+			:after{
+				content:"";
+				clear:both;
+				display: block;
+			}
+		}
+	}
+
+	@media #{$xsmall} {
+    	>ul{
+			>li{
+				float:none;
+				width:100%;
+				max-width:360px;
+				margin:0 auto;
+			}
+		}
+	}
+
+	@media #{$small} {
+    	>ul{
+			>li{
+				width:50%;
+				// max-width:360px;
+				// margin:0 auto;
+			}
+		}
+	}
+
+	@media #{$normal} {
+    	>ul{
+			>li{
+				width:33.33%;
+			}
+		}
+	}
+
+	@media #{$large} {
+    	>ul{
+			>li{
+				width:25%;
+				// max-width:360px;
+				// margin:0 auto;
+			}
+		}
+	}
+
 	.card {
 		padding: 8px;
 		margin: 8px;
-		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+		position: relative;
 		transform: translate3d(300px,0,0);
+		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 		opacity:0;
+		background-color: #FFF;
+
+		h2 {
+			font-size: 18px;
+			margin: -8px -8px 0 -8px;
+			background-color: #fff;
+			border-bottom: 1px dotted #f3f3f3;
+			font-weight: normal;
+			padding: 9px 15px;
+			color: #999;
+		}
 	}
 
 	.card.active {
@@ -108,6 +179,85 @@ border-color: #A6D1DD;
 		transform: translate3d(0,0,0);
 		opacity:1;
 	}
+
+	.overview {
+
+		.name {
+			font-size: 28px;
+			line-height: 1em;
+			border-bottom: 1px solid #ccc;
+			padding: 0 0 6px 0;
+		}
+
+		.badge ,
+		.timestamp {
+			display: inline-block;
+			background-color: #CCC;
+			color: #FFF;
+			border-radius: 18px;
+			font-size: 10px;
+			line-height: 1em;
+			padding: 4px 10px;
+			position: relative;
+			top: -2px;
+		}
+
+		.stockPrice {
+			font-size: 22px;
+			padding: 6px 0 0 3px;
+			font-family: Helvetica,Arial;
+		}
+
+		.negative .stockPrice {color:#{$RED};}
+		.positive .stockPrice {color:#{$GREEN};}
+		
+		.vector {
+			div {
+				width: 24px;
+				height: 24px;
+				background-color: #ccc;
+				color: #FFF;
+				margin: -12px;
+				position: absolute;
+				border-radius: 19px;
+				line-height: 24px;
+				text-align: center;
+				right: 18px;
+				top: 3px;
+				border: 2px solid #FFF;
+				box-shadow: 0 1px 5px rgba(0, 0, 0, 0.43),0 -2px 3px rgba(0, 0, 0, 0.1) inset;
+				font-size: 13px;
+			}
+		}
+
+		.positive .vector div {background-color:#{$GREEN};}
+		.negative .vector div {background-color:#{$RED};}
+
+	}
+
+	.positive-article ,
+	.negative-article {
+		p {
+			font-family:serif;
+		}
+	}
+
+	.positive-word ,
+	.negative-word {
+		ol {list-style-type:decimal;padding-left:24px;}
+		li {
+			list-style-type: decimal;
+			padding: 11px 0px;
+			line-height: 1em;
+			font-size: 14px;
+			margin: 3px -3px 3px 3px;
+			border-bottom: 1px dotted #ccc;
+			}
+		li:last-child {
+			border-bottom:none;
+		}
+	}
+
 }
 
 
